@@ -1,0 +1,437 @@
+*{
+    box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+/* Barra de navegación */
+.navbar {
+  background: var(--bg-nav);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marca */
+.brand {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+/* Menú principal */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+.menu li {
+  position: relative;
+}
+
+/* Animación de sub‑rayado (hover / focus) */
+.menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.menu a:hover,
+.menu a:focus {
+  color: var(--accent);
+}
+.menu a:hover::after,
+.menu a:focus::after {
+  transform: translateX(0);
+}
+
+/* Sub‑menú “Más” */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background: var(--bg-sub);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+.submenu li a {
+  padding: 0.5rem 1.25rem;
+  white-space: nowrap;
+}
+.dropdown:hover > .submenu,
+.dropdown:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#menu-toggle {
+  display: none; /* ocultar checkbox real */
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación hamburguesa */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.portada {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--clr-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem auto;
+  max-width: 1300px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.portada__content {
+  padding: 3rem;
+  align-self: center;
+}
+
+.title {
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.portada__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.portada__subtitle {
+  max-width: 26ch;
+  color: var(--clr-gray);
+  margin-bottom: 1.2rem;
+}
+
+.portada__figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.portada__figure img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.introduccion{
+  font-size: 18px;
+  text-align: center;
+}
+.equipo {
+  font-size: 12px;
+  text-align: left;
+}
+.enlace {
+ list-style: none;
+  padding-left: 1.2rem; 
+}
+.enlace::before {
+  content:"🐾";
+margin-right: 0.6rem;
+  font-size: 1.2rem;
+}
+/* Secciones */
+.secciones {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.bloque .contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.bloque img {
+   float: left;
+  margin: 0 1rem 1rem 0;  /* margen derecha y abajo */
+  border-radius: 8px;
+}
+.bloque h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.bloque p {
+  font-size: 1rem;
+  color: #555;
+   text-align: justify;
+}
+.bloque::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* Mostrar y ocultar menú en móvil */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: 5rem 1rem;
+    gap: 1.5rem;
+    background: var(--bg-nav);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+  }
+  #menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+}
+:root{
+  --alto-carrusel:320px;     /* altura base en móvil */
+}
+@media (min-width:768px){
+  :root{ --alto-carrusel:460px; }  /* más alto en pantallas grandes */
+}
+
+/* ----- Contenedor principal ----- */
+.carousel{
+  width:100%;
+  height:var(--alto-carrusel);
+  overflow:hidden;           /* recorta lo que sobresale */
+  position:relative;
+}
+
+/* Pista deslizante (fila infinita) */
+.track{
+  display:flex;
+  height:100%;
+  animation:scroll 24s linear infinite;
+}
+.carousel:hover .track{       /* pausa al pasar el mouse */
+  animation-play-state:paused;
+}
+
+/* Cada diapositiva ocupa todo el ancho de la ventana */
+.slide{
+  flex:0 0 100%;             /* 100 vw */
+  height:100%;
+}
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ----- Animación de desplazamiento infinito ----- */
+@keyframes scroll{
+  0%  {transform:translateX(0);}
+  100%{transform:translateX(-400%);} /* 4 imágenes únicas = 400 % */
+}
+ .carousel {
+      display: flex;
+      flex-wrap: wrap; /* Permite que las imágenes bajen en lugar de salirse */
+      justify-content: center; /* Centra las imágenes */
+    }
+    
+    .carousel-container {
+      width: 100%;
+      padding: 20px 10px;
+      height: auto;
+    }
+    .image-container img{
+      max-width: 80px;
+      height: auto;
+    }
+    .cajaAsideUno {
+      min-height: 100vh;
+      height: auto;
+    }
+ /* Contenedor principal del carrusel */
+.carrusel-container {
+  width: 90%; /* Ancho del carrusel */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Oculta el contenido fuera del carrusel */
+  padding: 20px 0;
+  background-color: #151b4db0; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Ajusta la altura del contenedor */
+}
+
+/* Carrusel - Contenedor de las imágenes */
+.carrusel {
+  display: flex;
+  align-items: flex-start; /* Alinea las imágenes al inicio (arriba) */
+}
+
+/* Contenedor de cada imagen */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  opacity: 0; /* Comienza invisible */
+  animation: fall 1s ease forwards; /* Aplicar la animación */
+}
+/* Animación de caída */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px); /* Comienza por encima de la posición original */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Termina en su lugar original */
+    opacity: 1; /* Se hace visible */
+  }
+}
+
+/* Añadir un retraso de tiempo para cada imagen, para que caigan de una en una */
+.image-container:nth-child(1) {
+  animation-delay: 0s; /* No hay retraso para la primera imagen */
+}
+
+.image-container:nth-child(2) {
+  animation-delay: 0.3s; /* Retraso de 0.3 segundos para la segunda imagen */
+}
+
+.image-container:nth-child(3) {
+  animation-delay: 0.6s; /* Retraso de 0.6 segundos para la tercera imagen */
+}
+
+.image-container:nth-child(4) {
+  animation-delay: 0.9s; /* Retraso de 0.9 segundos para la cuarta imagen */
+}
+
+.image-container:nth-child(5) {
+  animation-delay: 1.2s; /* Retraso de 1.2 segundos para la quinta imagen */
+}
+
+.image-container:nth-child(6) {
+  animation-delay: 1.5s; /* Retraso de 1.5 segundos para la sexta imagen */
+}
+
+.image-container:nth-child(7) {
+  animation-delay: 1.8s; /* Retraso de 1.8 segundos para la séptima imagen */
+}
+
+.image-container:nth-child(8) {
+  animation-delay: 2.1s; /* Retraso de 2.1 segundos para la octava imagen */
+}          
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #4d0d13;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #343a40;
+}
+.glosario {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #26446e;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(177, 13, 13, 0.628);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  border-top: 5px solid #611818;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
