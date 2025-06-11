@@ -99,22 +99,6 @@ body {
 #menu-toggle:checked + .hamburger span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-.portada {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--clr-card);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin: 1.5rem auto;
-  max-width: 1300px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06);
-}
-
-.portada__content {
-  padding: 3rem;
-}
-
 .metal-mania-regular {
   font-family: "Metal Mania", system-ui;
   font-weight: 400;
@@ -127,30 +111,6 @@ body {
   font-style: normal;
 }
 
-.portada__title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  margin-bottom: 0.5rem;
-}
-
-.portada__subtitle {
-  max-width: 26ch;
-  color: var(--clr-gray);
-  margin-bottom: 1.2rem;
-}
-
-.portada__figure {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.portada__figure img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  justify-content: flex-end;
-}
 .introduccion{
   font-size: 40px;
   font-family: "Metal Mania", system-ui;
