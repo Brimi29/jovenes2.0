@@ -17,7 +17,6 @@ body {
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Marca */
@@ -39,6 +38,7 @@ body {
 }
 .menu li {
   position: relative;
+  align-content: center;
 }
 
 /* Animación de sub‑rayado (hover / focus) */
@@ -99,6 +99,46 @@ body {
 #menu-toggle:checked + .hamburger span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
+
+.dropdown {
+  cursor: pointer;
+}
+
+.dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 10;
+  padding: 8px 0;
+
+}
+
+.dropdown ul a {
+  display: block;
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+  background: none;
+  text-align: center;
+}
+
+.dropdown:focus-within ul,
+.dropdown:hover ul {
+  display: flex;
+}
+
+.dropdown a:hover:nth-last-child(1){
+  color: #c0192a;
+}
+
+.dropdown a:hover:nth-last-child(2){
+  color: #dacf35;
+}
+
+
 .metal-mania-regular {
   font-family: "Metal Mania", system-ui;
   font-weight: 400;
@@ -118,19 +158,81 @@ body {
   text-align: center;
 }
 
+/* Carrusel vertical */
+
+.carrusel {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.carrusel .slide {
+  height: 500px;
+  width: 100%;
+  animation: slideUp 15s linear infinite;
+}
+@keyframes slideUp {
+  0% { transform: translateY(0%); }
+  33% { transform: translateY(-100%); }
+  66% { transform: translateY(-200%); }
+  100% { transform: translateY(0%); }
+}
+
+/* Títulos estilo periódico */
+.titular-animado {
+  font-family: var(--font-titular);
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  width: 0;
+  animation: escribir 4s steps(40, end) infinite;
+  margin: 2rem auto;
+  text-align: center;
+}
+@keyframes escribir {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+
+/* Sección doble */
+.contenido-doble {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+}
+.bloque {
+  flex: 1 1 300px;
+  max-width: 45%;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.bloque h3 {
+  font-family: var(--font-titular);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contenido-doble {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .bloque {
+    max-width: 100%;
+  }
+}
+
 .equipo {
   font-size: 12px;
   text-align: left;
 }
-.enlace {
- list-style: none;
-  padding-left: 1.2rem; 
-}
-.enlace::before {
-  content:"🐾";
-margin-right: 0.6rem;
-  font-size: 1.2rem;
-}
+
 /* Secciones */
 .secciones {
   padding: 2rem 1rem;
@@ -143,9 +245,16 @@ margin-right: 0.6rem;
 
 h2 {
   font-size: 40px;
-  font-family: "Metal Mania", system-ui;
+  font-family: "Rubik Vinyl", system-ui;
   font-style: normal;
   text-align: center
+}
+
+h3{
+    font-family: "Metal Mania", system-ui;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
 }
 
 .bloque .contenido {
@@ -250,7 +359,7 @@ h2 {
       height: auto;
     }
  /* Contenedor principal del carrusel */
-.carrusel-container {
+.carruselDos-container {
   width: 90%; /* Ancho del carrusel */
   margin: 0 auto;
   position: relative;
@@ -264,7 +373,7 @@ h2 {
 }
 
 /* Carrusel - Contenedor de las imágenes */
-.carrusel {
+.carruselDos {
   display: flex;
   align-items: flex-start; /* Alinea las imágenes al inicio (arriba) */
 }
@@ -354,10 +463,16 @@ h2 {
   margin: 0 auto;
 }
 
+.rubik-vinyl-regular {
+  font-family: "Rubik Vinyl", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  color: #26446e;
   margin-bottom: 2rem;
 }
 
@@ -413,32 +528,6 @@ h1 {
   gap: 1.5rem;
   opacity: 1;
   animation: flotar 1s ease-in-out forwards, desenfocar 0.8s ease-in-out 5s forwards;
-}
-button {
-    background: black;
-    cursor: pointer;
-    border: none;
-    padding: 16px 32px;
-    color: azure;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-    border-radius: 12px;
-}
-
-button:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
-    background-size: 800%;
-    border-radius: 12px;
-    filter: blur(8px);
-    animation: glowing 20s linear infinite;
 }
 
 @keyframes glowing {

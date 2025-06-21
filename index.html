@@ -9,84 +9,70 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="navbar">
-      <div class="container">
-        <!-- Marca -->
-        <a href="#" class="brand"><img src="logos/" alt="" style="width: 10vh;"></a>
+      <div class="container" style="display: flexbox;justify-content: center;">
          <!-- Hamburguesa (solo se ve en mobile) -->
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
         </label>
         <!-- Menú principal -->
         <ul class="menu">
-          <li><a href="#">Info</a></li>
-          <li><a href="#">Temas</a></li>
+          <li><a href="#">Inicio</a></li>
+          
+          <li class="dropdown">
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="dropdown-button">Tabús</label>
+          <ul class="dropdown-menu">
+            <li><a href="#">Sexualidad</a></li>
+              <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
+            <li><a href="#">Problemas alimenticios</a></li>
+              <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
+            <li><a href="#">Salud y emociones</a></li>
+          </ul>
+        </li>
+
+
+           <a href="#" class="brand" style="font-size: 40px;font-family: Metal Mania, system-ui;font-style: normal;">JÓVENES 2.0</a>
           <li><a href="#">Museo</a></li>
           <li><a href="#">Más</a></li>
         </ul>
       </div>
     </nav>
-    <main>
-      <!--Portada-->
-       <section class="container my-4" 
-  style="position: relative;
-  display: grid;
-  overflow: hidden;
-  margin: 1.5rem auto;
-  max-width: 1300px;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.06);">
-          <div class="row">
-            <div class="col-12 text-center mb-3">
-            </div>
-            <div class="col-12 col-lg-6 text-center mb-3 mb-lg-0">
-              <img src="logos/logoPanteraDos.png" alt="Foto" class="img-fluid rounded">
-            </div>
-            <div class="col-12 col-lg-6" style="position: relative; align-content: center;">
-              <h2>JÓVENES 2.0</h2>
-              <p style="text-align: center;">
-               carrusel De Los Tabúes
-              </p>
-            </div>
-        </section>
-    <!--contenido-->
-<main class="secciones">
-  <section class="bloque">
-      <div class="contenido">
-        <img src="" alt="" />
-        <div>
-          <h2 class="introduccion">¿QUIÉNES SOMOS?</h2>
-          <p>
-        Jóvenes 2.0 se enfoca en combatir la desinformación sobre estos términos en las mismas redes sociales donde se divulga, busca dar una percepción real y atenuada sobre lo que sucede en el mundo que nos rodea dentro de las ya mencionadas redes sociales, donde demuestra en varias maneras de contenido multimedia (audiovisuales, podcast y página web) las causas y consecuencias de no tener el suficiente conocimiento respecto a los peligros del ciberacoso, sexting y grooming, los tabúes que conyevan y otros más que al igual que estos temas, no se tocan.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="carousel">
-    <div class="track">
-      <!-- Con cuatro imágenes reales duplicadas conseguimos bucle perfecto -->
-      <div class="slide"><img src="logos/logo.png" alt="Logo" /></div>
-      <div class="slide"><img src="imagenes/mujer.jpg" alt="Ilustración" /></div>
-      <div class="slide"><img src="imagenes/panteraFondo_Mesa de trabajo 1.jpg" alt="" /></div>
-      <!-- Duplicadas para continuidad -->
-      <div class="slide"><img src="logos/logo.png" alt="Logo" /></div>
-      <div class="slide"><img src="imagenes/mujer.jpg" alt="Ilustración" /></div>
-      <div class="slide"><img src="imagenes/panteraFondo_Mesa de trabajo 1.jpg" alt="" /></div>
+    <!-- Carrusel vertical -->
+  <section class="carrusel">
+    <div class="slide"><img src="imagenes/fondoDos.jpg" alt="Imagen 1" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+    <div class="slide"><img src="imagenes/fondoUno.jpg" alt="Imagen 2" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+    <div class="slide"><img src="imagenes/fondoTres.jpg" alt="Imagen 3" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+  </section>
+
+    <!-- Título animado -->
+  <h1 class="titular-animado" style="font-family: Rubik Vinyl, system-ui; font-weight: 400;">¿QUIÉNES SOMOS?</h1>
+
+  <!-- Sección doble -->
+  <section class="contenido-doble">
+    <div class="bloque">
+      <p>Jóvenes 2.0 se enfoca en combatir la desinformación sobre estos términos en las mismas redes sociales donde se divulga, busca dar una percepción real y atenuada sobre lo que sucede en el mundo que nos rodea dentro de las ya mencionadas redes sociales, donde demuestra en varias maneras de contenido multimedia (audiovisuales, podcast y página web) las causas y consecuencias de no tener el suficiente conocimiento respecto a los peligros del ciberacoso, sexting y grooming, los tabúes que conyevan y otros más que al igual que estos temas, no se tocan.</p>
     </div>
   </section>
-          <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
-
-          <!--AQUÍ VAN LOS TEMAS-->
-      <h2>TEMAS</h2>  
-    <button style="margin: 15px; width: 150px; margin: 1rem auto;">
-      <a href="" style="text-decoration: none; color: aliceblue;font-family: Metal Mania, system-ui; font-weight: lighter; ">
-        ¿INICIO?</a>
-    </button>
-  </main>
   <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
-   <h2 id="#multimedia" style="text-align: center;">MULTIMEDIA</h2>
+ 
+  <div class="row">
+  <div class="col-6" style="padding: 80px;">
+  <h2 style="font-family: Rubik Vinyl, system-ui; font-weight: 400;">Noticiero</h2>
+  <p style="text-align: center;">El noticiero de Jóvenes 2.0, <br> te mantendrá informado de cualquier tabú, <br>alerta o verdad sobre temas que no se tocan.</p>
+  </div>
+  <div class="col-6">
+    <img class="gif" src="imagenes/gift.gif" alt="" style="justify-content: center; border-radius: 10px; margin: 15px;">
+  </div>
+  </div> 
+  <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
+   <h2 class="titular-animado" style="font-family: Rubik Vinyl, system-ui; font-weight: 400;">MULTIMEDIA</h2>
   <section class="galeria">
     <div class="grid">
       <div class="item"><img src="imagenes/amor.jpg" alt="Contenido 1" /></div>
@@ -96,69 +82,51 @@
       <div class="item"><img src="imagenes/religion.jpg" alt="Contenido 5" /></div>
     </div>
     <div class="mensaje-final">
-      <h2> Esto y muchas cosas más en <strong>Jóvenes 2.0</strong></h2>
+      <h3> Esto y muchas cosas más en <strong>Jóvenes 2.0</strong></h3>
     </div>
   </section>
   <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
 
-  <h2>MÁS</h2>
-  <section class="container my-4">
-          <div class="row">
-            <div class="col-12 text-center mb-3">
-            </div>
-            <div class="col-12 col-lg-6 text-center mb-3 mb-lg-0">
-              <img src="imagenes/equipo.jpg" alt="Foto" class="img-fluid rounded">
-            </div>
-            <div class="col-12 col-lg-6" style="position: relative; align-content: center;">
-              <h2>EQUIPO</h2>
-              <p>
-               Las mentes maestras de Jóvenes 2.0 son: Brillith Marcela Martínez Martínez, Lizeth Vanessa Nova Peña e Ivana Lucia Bonilla Barrera. 
-              </p>
-            </div>
-          </div>
-        </section>
-         <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
+  <h2 class="titular-animado" style="font-family: Rubik Vinyl, system-ui; font-weight: 400;">MÁS</h2>
       <section class="container my-4">
           <div class="row">
             <div class="col-12 text-center mb-3">
             </div>
             <div class="col-12 col-lg-6" style="position: relative; align-content: center;">
-              <h2>MISIÓN</h2>
+              <h2 style="font-size: xx-large;">MISIÓN</h2>
               <p>
                La misión de JÓVENES 2.0 es informar a los adolescentes respecto al grooming, sexting y ciberacoso para dejar de verlos como tabú, al igual que otros temas, como la sexualidad, la muerte, etc. En cuanto a los adultos (posibles responsables de ellos), tengan la información adecuada respecto a vocabulario usado entre los jóvenes y personas que los quieren lastimar.
               </p>
             </div>
-            <div class="col-12 col-lg-6 text-center mb-3 mb-lg-0">
-              <img src="imagenes/mujer.jpg" alt="Foto" class="img-fluid rounded">
-            </div>
-          </div>
-        </section>
-         <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
-        <section class="container my-4">
+            <section class="container my-4">
           <div class="row">
             <div class="col-12 col-lg-6 text-center mb-3 mb-lg-0">
-              <img src="imagenes/amor.jpg" alt="Foto" class="img-fluid rounded">
+              
             </div>
             <div class="col-12 col-lg-6" style="position: relative; align-content: center;">
-              <h2>VISIÓN</h2>
+              <h2 style="font-size: xx-large;">VISIÓN</h2>
               <p>
             JÓVENES 2.0 aspira en llegar a miles de seguidores en 1 o 2 años, donde será fiel a sus enseñanzas, dinámicas e incluso inclusión para los jóvenes y sus cuidadores, independiente de que sean familiares, tutores, profesores, entre otros.
               </p>
             </div>
           </div>
         </section>
+            </div>
+          </div>
+        </section>
+         <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
            <hr style="border: none; height: 2px; background-color: #444; margin: 0;">
         <div class="row">
             <div class="col-12">
             <div class="col-12">
-              <h2>UTILIZAMOS</h2>
+              <h2 class="titular-animado"  style="font-family: Rubik Vinyl, system-ui; font-weight: 400;">UTILIZAMOS</h2>
               <p style="text-align: center;">
            Las aplicaciones y/o los programas utilizados por Jóvenes 2.0 para el crecimiento de su creación <br> y mejoras a lo largo del tiempo de u construcción, son: </p>
               </p>
             </div>
           </div>
-        <div class="carrusel-container">
-              <div class="carrusel">
+        <div class="carruselDos-container">
+              <div class="carruselDos">
                 <div class="image-container">
                   <img src="logos/ilustrador.png" alt="illustrator" style="width: 10vh;">
                 </div>
