@@ -594,6 +594,64 @@ h1 {
     opacity: 1;
   }
 }
+
+.baraja-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+}
+
+.baraja-section {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.baraja-section img {
+  object-fit: cover;
+  shape-margin: 100px;
+  object-fit: cover; /* Recorta la imagen para que llene el contenedor */
+}
+
+.baraja-section:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.1);
+}
+
+/* Animación activa */
+.baraja-section.visible {
+  animation: barajar 0.8s ease forwards;
+}
+
+@keyframes barajar {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotate(-5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .baraja-section {
+    flex-direction: column;
+  }
+}
+
 .footer {
   background-color: #1a1a1a;
   color: #f0f0f0;
