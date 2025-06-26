@@ -9,4 +9,15 @@ window.addEventListener("load", () => {
   }, 7000); // tiempo total de animación
 });
 
+function toggleCard(cardElement) {
+  // Cierra otras cards si están abiertas
+  document.querySelectorAll('.card').forEach(card => {
+    if (card !== cardElement) {
+      card.classList.remove('active');
+    }
+  });
+
+  // Activa/desactiva la card seleccionada
+  cardElement.classList.toggle('active');
+}
 
