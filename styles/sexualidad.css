@@ -230,15 +230,7 @@ body {
 }
 
 #contenido {
-  padding: 2rem;
   text-align: center;
-}
-
-#contenido img {
-  max-width: 400px;
-  width: 90%;
-  margin-top: 1rem;
-  border-radius: 8px;
 }
 
 .bungee-tint-regular {
@@ -260,6 +252,81 @@ body {
   color: #000000;
   padding: 50px;
 
+}
+
+
+/* Estilo general para las secciones */
+.seccion {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 50px;
+  align-items: center;
+}
+
+/* Textos */
+.titular-animado {
+  font-weight: bolder;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contenido {
+  flex: 1;
+  padding: 30px;
+}
+
+.contenido p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Imágenes y videos */
+.media-ajustada {
+ justify-content: center; 
+ border-radius: 10px; 
+ max-width: 100vh; 
+ padding: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.multimedia {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Línea separadora */
+.separador {
+  border: none;
+  height: 2px;
+  background-color: #444;
+  margin: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .seccion {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .contenido, .multimedia {
+    padding: 20px;
+  }
+
+  .titular-animado {
+    font-size: 24px;
+  }
+
+  .media-ajustada {
+    max-width: 100%;
+  }
 }
 
 .image-container img {

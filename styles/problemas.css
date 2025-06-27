@@ -210,7 +210,6 @@ body {
 
 #contenido {
   display: none;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -219,4 +218,17 @@ body {
   width: 90%;
   margin-top: 1rem;
   border-radius: 8px;
+}
+
+.texto h1{
+  justify-content: center;
+  text-align: center;
+}
+
+.texto {
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  padding: 50px;
+
 }
