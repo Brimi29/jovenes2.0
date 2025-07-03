@@ -134,14 +134,6 @@ body {
   display: flex;
 }
 
-.dropdown a:hover:nth-last-child(1){
-  color: #c0192a;
-}
-
-.dropdown a:hover:nth-last-child(2){
-  color: #dacf35;
-}
-
 /* Mostrar y ocultar menú en móvil */
 @media (max-width: 768px) {
   .menu {
@@ -219,4 +211,152 @@ body {
   width: 90%;
   margin-top: 1rem;
   border-radius: 8px;
+}
+.creditos {
+  background: #222;
+  color: #eee;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  list-style: none;
+}
+
+.creditos-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.creditos-texto {
+  flex: 1 1 60%;
+  list-style: none;
+}
+
+.creditos h3 {
+  color: #d4d4d4;
+  margin-bottom: 1rem;
+  font-size: 2.0rem;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+   font-family: "Metal Mania", system-ui;
+}
+
+
+.creditos-texto ul {
+  padding-left: 1rem;
+  list-style-type: square;
+  list-style: none;
+}
+
+.creditos-texto li {
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  justify-content: center;
+
+}
+
+.creditos-texto a {
+  color: #80deea;
+  text-decoration: none;
+  justify-content: center;
+}
+.creditos-texto a:hover {
+  text-decoration: underline;
+}
+
+.redes-sociales {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  align-content: center;
+}
+
+.redes-sociales a {
+  color: #eee;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  color: #4480db;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .creditos-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .redes-sociales {
+    margin-top: 1.5rem;
+  }
+}
+.texto h1{
+  justify-content: center;
+  text-align: center;
+  font-family: "Metal Mania", system-ui;
+  
+}
+
+.texto {
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  padding: 50px;
+  background-color: #4480db;
+  display: block;
+}
+
+/* Contenedor principal del artículo */
+.exclusiva {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+  border-left:line 5px solid ; /* color serio, estilo noticias */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del artículo */
+.exclusiva h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #c62828;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+/* Párrafo del artículo */
+.exclusiva p {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: justify;
+  margin-top: 1rem;
+  white-space: pre-line; /* respeta saltos de línea del HTML */
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .exclusiva {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .exclusiva h1 {
+    font-size: 1.5rem;
+  }
+
+  .exclusiva p {
+    font-size: 1rem;
+  }
 }

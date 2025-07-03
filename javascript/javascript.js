@@ -34,3 +34,19 @@ window.addEventListener('DOMContentLoaded', () => {
   barajarCartas();
   setInterval(barajarCartas, 4000); // Baraja cada 4 segundos
 });
+
+
+//estilo revista
+const bloques = document.querySelectorAll('.revista-bloque');
+
+const mostrarBloques = () => {
+  bloques.forEach((bloque) => {
+    const top = bloque.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      bloque.classList.remove('oculto');
+    }
+  });
+};
+
+window.addEventListener('scroll', mostrarBloques);
+window.addEventListener('load', mostrarBloques)

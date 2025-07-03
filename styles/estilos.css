@@ -130,14 +130,6 @@ body {
   display: flex;
 }
 
-.dropdown a:hover:nth-last-child(1){
-  color: #c0192a;
-}
-
-.dropdown a:hover:nth-last-child(2){
-  color: #dacf35;
-}
-
 
 .metal-mania-regular {
   font-family: "Metal Mania", system-ui;
@@ -187,7 +179,7 @@ body {
   text-align: center;
   color: #000000;
   padding: 50px;
-  background-color: #18417ed0;
+  background-color: #4480db;
   display: block;
 }
 
@@ -545,32 +537,131 @@ h1 {
   }
 }
 
-.footer {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  padding: 2rem 1rem;
+.revista {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.revista-bloque {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.revista-bloque p{
+  justify-content: center;
   text-align: center;
-  font-family: 'Arial', sans-serif;
-  margin-top: 3rem;
 }
 
-.footer-content {
-  max-width: 900px;
+.revista-bloque img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex: 1 1 300px;
+}
+
+.revista-texto {
+  flex: 1 1 300px;
+}
+
+.revista-bloque.oculto {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.revista-texto p{
+  text-align: center;
+  justify-content: center;
+}
+.creditos {
+  background: #222;
+  color: #eee;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  list-style: none;
+}
+
+.creditos-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
+  list-style: none;
 }
 
-.social-icons {
+.creditos-texto {
+  flex: 1 1 60%;
+  list-style: none;
+}
+
+.creditos h3 {
+  color: #d4d4d4;
+  margin-bottom: 1rem;
+  font-size: 2.0rem;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+   font-family: "Metal Mania", system-ui;
+}
+
+
+.creditos-texto ul {
+  padding-left: 1rem;
+  list-style-type: square;
+  list-style: none;
+}
+
+.creditos-texto li {
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  justify-content: center;
+
+}
+
+.creditos-texto a {
+  color: #80deea;
+  text-decoration: none;
+  justify-content: center;
+}
+.creditos-texto a:hover {
+  text-decoration: underline;
+}
+
+.redes-sociales {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
   margin-top: 1rem;
+  align-content: center;
 }
 
-.social-icons a {
-  color: #f0f0f0;
-  margin: 0 10px;
-  font-size: 1.5rem;
+.redes-sociales a {
+  color: #eee;
+  font-size: 1.8rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-icons a:hover {
+.redes-sociales a:hover {
+  color: #4480db;
   transform: scale(1.2);
-  color: #ff4081; /* Puedes cambiar el color al que quieras */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .creditos-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .redes-sociales {
+    margin-top: 1.5rem;
+  }
 }
