@@ -544,6 +544,7 @@ h1 {
   padding: 2rem;
   max-width: 1200px;
   margin: auto;
+  justify-content: center;
 }
 
 .revista-bloque {
@@ -557,7 +558,9 @@ h1 {
 .revista-bloque p{
   justify-content: center;
   text-align: center;
+  padding: 100px;
 }
+
 
 .revista-bloque img {
   max-width: 100%;

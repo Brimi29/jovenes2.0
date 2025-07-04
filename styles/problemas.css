@@ -758,3 +758,104 @@ p {
     font-size: 1rem;
   }
 }
+/* Contenedor principal del artículo */
+.arvista {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Encabezado */
+.arvista-encabezado {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.arvista-encabezado h1 {
+  font-size: 2.0rem;
+  color: #bbb81f;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  font-style: italic;
+  color: #555;
+}
+
+/* Bloques de contenido */
+.arvista-bloque {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: aparecer 1s forwards;
+}
+
+.arvista-bloque:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.arvista-texto {
+  flex: 1 1 50%;
+  padding: 1rem 2rem;
+}
+
+.arvista-texto h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #bbb81f;
+}
+
+.arvista-texto p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.arvista-imagen {
+  flex: 1 1 50%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.arvista-imagen img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.arvista-imagen img:hover {
+  transform: scale(1.05);
+}
+
+/* Animación de scroll */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal */
+.arvista-bloque {
+  visibility: hidden;
+}
+.arvista-bloque.visible {
+  visibility: visible;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .arvista-bloque {
+    flex-direction: column !important;
+  }
+
+  .arvista-texto {
+    padding: 1rem;
+  }
+
+  .arvista-imagen {
+    padding: 1rem;
+  }
+}
