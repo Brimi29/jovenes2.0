@@ -1,5 +1,5 @@
 
-console.log("¡Funciona el JavaScript!");
+console.log("Brimi");
 
 // Aplica animación cuando las cards están en vista
 
