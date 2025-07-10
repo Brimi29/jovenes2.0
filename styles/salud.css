@@ -4,7 +4,6 @@
 }
 
 body {
-  margin: 0;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: #fff;
   overflow: hidden;
@@ -142,6 +141,16 @@ body {
   0% { opacity: 0; transform: translateY(30px) rotate(-5deg); }
   50% { opacity: 1; transform: translateY(0px) rotate(0deg); }
   100% { opacity: 0; transform: translateY(-30px) rotate(5deg); }
+}
+
+.portada {
+  height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+
+.portada .sexualidad {
+  width: 100%;
 }
 
 #contenido {
