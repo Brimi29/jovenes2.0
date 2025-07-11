@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 body {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: #f8f9fa;
   color: #333;
 }
@@ -91,6 +90,67 @@ body {
 .dropdown:hover ul {
   display: flex;
 }
+/* Ícono hamburguesa */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.menu-icon-toggle {
+  display: none;
+}
+
+/* Menú móvil oculto por defecto */
+.mobile-menu {
+  display: none;
+  background: var(--bg-nav);
+  padding: 1rem;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  margin: 1rem 0;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Mostrar menú móvil si está activado */
+.menu-icon-toggle:checked + .menu-icon + .mobile-menu {
+  display: block;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+}
+
 
 
 .metal-mania-regular {
@@ -114,13 +174,13 @@ body {
 
 /* Títulos estilo periódico */
 .titular-animado {
-  font-family: var(--font-titular);
+  font-family:"Metal Mania", system-ui;
   font-size: 2rem;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid var(--accent);
   width: 0;
-  animation: escribir 4s steps(40, end) infinite;
+  animation: escribir 6s steps(60, end) infinite;
   margin: 2rem auto;
   text-align: center;
 }
@@ -196,7 +256,7 @@ body {
 
 h2 {
   font-size: 40px;
-  font-family:'Courier New', Courier, monospace;
+  font-family:"Metal Mania", system-ui;
   font-style: normal;
   text-align: center;
   font-weight: bolder;
@@ -341,7 +401,7 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Metal Mania", system-ui;
   font-weight: bolder;
 }
 
@@ -535,7 +595,6 @@ h1 {
   font-family: 'Segoe UI', sans-serif;
   list-style: none;
 }
-
 .creditos-contenido {
   display: flex;
   flex-wrap: wrap;
